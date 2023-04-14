@@ -9,7 +9,7 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir ,  'resources/database1.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir ,  'resources/database.db')
     SQLALCHEMY_ECHO =  True
     TOKEN_EXPIRATION = 1200 
     
