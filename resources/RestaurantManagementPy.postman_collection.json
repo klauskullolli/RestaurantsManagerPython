@@ -1,0 +1,1134 @@
+{
+	"info": {
+		"_postman_id": "25ec9de9-5b6a-4452-a3ba-082c58f33a16",
+		"name": "RestaurantManagementPy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18257581"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user1\",\r\n    \"surname\": \"hello\",\r\n    \"username\": \"user1\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/client",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin1\",\r\n    \"surname\": \"hello\",\r\n    \"username\": \"admin1\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/admin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user1\",\r\n    \"surname\": \"bosi\",\r\n    \"username\": \"user1\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserByUsername",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/username/admin1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"username",
+								"admin1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurant",
+			"item": [
+				{
+					"name": "getRestaurants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/restaurant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRestaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"restaurant2\",\r\n    \"address\" : \"Near smth\",\r\n    \"rate\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/restaurant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/restaurant/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRestaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/restaurant/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRestaurant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"restaurant1\",\r\n    \"address\" : \"Near smth\",\r\n    \"rate\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/restaurant/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "getProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Chicken Filets\" ,\r\n    \"price\": 60,\r\n    \"amount\": 600,\r\n    \"belonging\": \"MAIN\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/product?restaurant_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "restaurant_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Chicken Soup\" ,\r\n    \"price\": 20,\r\n    \"amount\": 40,\r\n    \"belonging\": \"SOUPS\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "menu",
+			"item": [
+				{
+					"name": "getMenus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMenuById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMenu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"menu1\",\r\n    \"startTime\": \"08:00\",\r\n    \"endTime\": \"12:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/product/1?restaurant_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"product",
+								"1"
+							],
+							"query": [
+								{
+									"key": "restaurant_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMenu",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMenu",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"menu4\",\r\n    \"startTime\": \"08:00\",\r\n    \"endTime\": \"20:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProductToMenu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/4/product/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"4",
+								"product",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductFromMenu",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/menu/4/product/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"menu",
+								"4",
+								"product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "getOrders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/menu/4/product?product_id=1&amount=3&client_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"menu",
+								"4",
+								"product"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "1"
+								},
+								{
+									"key": "amount",
+									"value": "3"
+								},
+								{
+									"key": "client_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProductToOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/1/menu/4/product?product_id=8&amount=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"1",
+								"menu",
+								"4",
+								"product"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "8"
+								},
+								{
+									"key": "amount",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrderProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/1/product/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"1",
+								"product",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTQ2ODk5Nn0.1Cbd3wUHGPLCw2ZHy5AJgngCjwF8LZz9faNBAJoed2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/1?status=Created",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"1"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Created"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl0sImV4cCI6MTY4MTMxMjU4OH0.isxJXd8aq7A_nxdV9WBZnKto1L3ND1gQqBWNM5OP9Lg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ciku\",\r\n    \"password\": \"ciku\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh_token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsInBhc3N3b3JkIjoiMTIzNCIsInJvbGVzIjpbIkFETUlOIl19.Iaz7D1Y0icWcK3Vj_kHuJSRiiOKLrMVSzWofC2tVJ1s",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000//access_token/refresh",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"access_token",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
