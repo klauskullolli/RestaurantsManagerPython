@@ -5,6 +5,7 @@ from util.errorHandler import exceptionHandler, notAuthorizedHandler, notAuthent
 import jwt 
 from util.application import  app
 from models.userModel import UserModel 
+import asyncio
 
 
 def generateSecretKey(nr:int): 
@@ -13,7 +14,7 @@ def generateSecretKey(nr:int):
 
 def authenticated(roles: list):
     def inner(func): 
-        def wrapper(*args, **kwargs): 
+        async def wrapper_async(*args, **kwargs): 
             try: 
                 token  =  request.headers['Authorization']
                 if not token :
@@ -41,8 +42,41 @@ def authenticated(roles: list):
             except Exception as e : 
                 return exceptionHandler(e)
             
-        wrapper.__name__ = func.__name__
-        return wrapper 
+        def wrapper_sync(*args, **kwargs): 
+            try: 
+                token  =  request.headers['Authorization']
+                if not token :
+                    return notAuthenticatedHandler('Token is missing in Authorization header')
+                token =  token.replace('Bearer: ', '')
+                
+                if app.config['INVALID_TOKEN']: 
+                    return notAuthenticatedHandler('Invalid Token')
+                
+                payload = jwt.decode(token, app.config['SECRET_KEY'] , algorithms='HS256')
+                
+                authorized =  False 
+                
+                for  role in roles: 
+                    if role in ['All' , 'all' , 'ALL'] :
+                        authorized = True
+                    if role in payload['roles']: 
+                        authorized =  True
+                        break 
+                    
+                if not authorized:  
+                    return notAuthorizedHandler('Unauthorized Request')
+                                 
+                return func(*args, **kwargs)
+            except Exception as e : 
+                return exceptionHandler(e)
+            
+       
+        if asyncio.iscoroutinefunction(func):
+            wrapper_async.__name__ = func.__name__
+            return wrapper_async
+            
+        wrapper_sync.__name__ = func.__name__
+        return wrapper_sync
     
     return inner 
 
